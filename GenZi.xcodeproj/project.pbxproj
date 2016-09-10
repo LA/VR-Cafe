@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E80965C11D84CB1E00E323C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80965BB1D84CB1E00E323C4 /* AppDelegate.swift */; };
+		E80965C21D84CB1E00E323C4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80965BC1D84CB1E00E323C4 /* Extensions.swift */; };
+		E80965C31D84CB1E00E323C4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E80965BD1D84CB1E00E323C4 /* Info.plist */; };
+		E80965C91D84CBFF00E323C4 /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80965C61D84CBFF00E323C4 /* Instruction.swift */; };
+		E80965CA1D84CBFF00E323C4 /* InstructionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80965C71D84CBFF00E323C4 /* InstructionCollectionViewCell.swift */; };
+		E80965CB1D84CBFF00E323C4 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80965C81D84CBFF00E323C4 /* InstructionViewController.swift */; };
+		E80965CD1D84CC5200E323C4 /* GameLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80965CC1D84CC5200E323C4 /* GameLibraryViewController.swift */; };
+		E80965CF1D84CC7600E323C4 /* GameLibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80965CE1D84CC7600E323C4 /* GameLibraryCollectionViewCell.swift */; };
+		E80965D11D84CD4900E323C4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80965D01D84CD4900E323C4 /* Game.swift */; };
+		E80F77111D8361A500003FF4 /* GenZi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E80F770F1D8361A500003FF4 /* GenZi.xcdatamodeld */; };
+		E80F77131D8361A500003FF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E80F77121D8361A500003FF4 /* Assets.xcassets */; };
+		E80F77161D8361A500003FF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E80F77141D8361A500003FF4 /* LaunchScreen.storyboard */; };
+		E80F77211D8361A500003FF4 /* GenZiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F77201D8361A500003FF4 /* GenZiTests.swift */; };
+		E80F772C1D8361A500003FF4 /* GenZiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F772B1D8361A500003FF4 /* GenZiUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E80F771D1D8361A500003FF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E80F76FD1D8361A500003FF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E80F77041D8361A500003FF4;
+			remoteInfo = GenZi;
+		};
+		E80F77281D8361A500003FF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E80F76FD1D8361A500003FF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E80F77041D8361A500003FF4;
+			remoteInfo = GenZi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E80965BB1D84CB1E00E323C4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E80965BC1D84CB1E00E323C4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E80965BD1D84CB1E00E323C4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E80965C61D84CBFF00E323C4 /* Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
+		E80965C71D84CBFF00E323C4 /* InstructionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionCollectionViewCell.swift; sourceTree = "<group>"; };
+		E80965C81D84CBFF00E323C4 /* InstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
+		E80965CC1D84CC5200E323C4 /* GameLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLibraryViewController.swift; sourceTree = "<group>"; };
+		E80965CE1D84CC7600E323C4 /* GameLibraryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLibraryCollectionViewCell.swift; sourceTree = "<group>"; };
+		E80965D01D84CD4900E323C4 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E80F77051D8361A500003FF4 /* GenZi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GenZi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E80F77101D8361A500003FF4 /* GenZi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GenZi.xcdatamodel; sourceTree = "<group>"; };
+		E80F77121D8361A500003FF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E80F77151D8361A500003FF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E80F771C1D8361A500003FF4 /* GenZiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GenZiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E80F77201D8361A500003FF4 /* GenZiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenZiTests.swift; sourceTree = "<group>"; };
+		E80F77221D8361A500003FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E80F77271D8361A500003FF4 /* GenZiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GenZiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E80F772B1D8361A500003FF4 /* GenZiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenZiUITests.swift; sourceTree = "<group>"; };
+		E80F772D1D8361A500003FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E80F77021D8361A500003FF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E80F77191D8361A500003FF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E80F77241D8361A500003FF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E80965BA1D84CB1E00E323C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E80965BB1D84CB1E00E323C4 /* AppDelegate.swift */,
+				E80965BC1D84CB1E00E323C4 /* Extensions.swift */,
+				E80965BD1D84CB1E00E323C4 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E80965C41D84CBFF00E323C4 /* Game Library */ = {
+			isa = PBXGroup;
+			children = (
+				E80965CC1D84CC5200E323C4 /* GameLibraryViewController.swift */,
+				E80965D01D84CD4900E323C4 /* Game.swift */,
+				E80965CE1D84CC7600E323C4 /* GameLibraryCollectionViewCell.swift */,
+			);
+			path = "Game Library";
+			sourceTree = "<group>";
+		};
+		E80965C51D84CBFF00E323C4 /* How To */ = {
+			isa = PBXGroup;
+			children = (
+				E80965C61D84CBFF00E323C4 /* Instruction.swift */,
+				E80965C71D84CBFF00E323C4 /* InstructionCollectionViewCell.swift */,
+				E80965C81D84CBFF00E323C4 /* InstructionViewController.swift */,
+			);
+			path = "How To";
+			sourceTree = "<group>";
+		};
+		E80F76FC1D8361A500003FF4 = {
+			isa = PBXGroup;
+			children = (
+				E80F77071D8361A500003FF4 /* GenZi */,
+				E80F771F1D8361A500003FF4 /* GenZiTests */,
+				E80F772A1D8361A500003FF4 /* GenZiUITests */,
+				E80F77061D8361A500003FF4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E80F77061D8361A500003FF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E80F77051D8361A500003FF4 /* GenZi.app */,
+				E80F771C1D8361A500003FF4 /* GenZiTests.xctest */,
+				E80F77271D8361A500003FF4 /* GenZiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E80F77071D8361A500003FF4 /* GenZi */ = {
+			isa = PBXGroup;
+			children = (
+				E80965C41D84CBFF00E323C4 /* Game Library */,
+				E80965C51D84CBFF00E323C4 /* How To */,
+				E80965BA1D84CB1E00E323C4 /* Supporting Files */,
+				E80F77121D8361A500003FF4 /* Assets.xcassets */,
+				E80F77141D8361A500003FF4 /* LaunchScreen.storyboard */,
+				E80F770F1D8361A500003FF4 /* GenZi.xcdatamodeld */,
+			);
+			path = GenZi;
+			sourceTree = "<group>";
+		};
+		E80F771F1D8361A500003FF4 /* GenZiTests */ = {
+			isa = PBXGroup;
+			children = (
+				E80F77201D8361A500003FF4 /* GenZiTests.swift */,
+				E80F77221D8361A500003FF4 /* Info.plist */,
+			);
+			path = GenZiTests;
+			sourceTree = "<group>";
+		};
+		E80F772A1D8361A500003FF4 /* GenZiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E80F772B1D8361A500003FF4 /* GenZiUITests.swift */,
+				E80F772D1D8361A500003FF4 /* Info.plist */,
+			);
+			path = GenZiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E80F77041D8361A500003FF4 /* GenZi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E80F77301D8361A500003FF4 /* Build configuration list for PBXNativeTarget "GenZi" */;
+			buildPhases = (
+				E80F77011D8361A500003FF4 /* Sources */,
+				E80F77021D8361A500003FF4 /* Frameworks */,
+				E80F77031D8361A500003FF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GenZi;
+			productName = GenZi;
+			productReference = E80F77051D8361A500003FF4 /* GenZi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E80F771B1D8361A500003FF4 /* GenZiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E80F77331D8361A500003FF4 /* Build configuration list for PBXNativeTarget "GenZiTests" */;
+			buildPhases = (
+				E80F77181D8361A500003FF4 /* Sources */,
+				E80F77191D8361A500003FF4 /* Frameworks */,
+				E80F771A1D8361A500003FF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E80F771E1D8361A500003FF4 /* PBXTargetDependency */,
+			);
+			name = GenZiTests;
+			productName = GenZiTests;
+			productReference = E80F771C1D8361A500003FF4 /* GenZiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E80F77261D8361A500003FF4 /* GenZiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E80F77361D8361A500003FF4 /* Build configuration list for PBXNativeTarget "GenZiUITests" */;
+			buildPhases = (
+				E80F77231D8361A500003FF4 /* Sources */,
+				E80F77241D8361A500003FF4 /* Frameworks */,
+				E80F77251D8361A500003FF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E80F77291D8361A500003FF4 /* PBXTargetDependency */,
+			);
+			name = GenZiUITests;
+			productName = GenZiUITests;
+			productReference = E80F77271D8361A500003FF4 /* GenZiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E80F76FD1D8361A500003FF4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = com.adarbutel;
+				TargetAttributes = {
+					E80F77041D8361A500003FF4 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					E80F771B1D8361A500003FF4 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = E80F77041D8361A500003FF4;
+					};
+					E80F77261D8361A500003FF4 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = E80F77041D8361A500003FF4;
+					};
+				};
+			};
+			buildConfigurationList = E80F77001D8361A500003FF4 /* Build configuration list for PBXProject "GenZi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E80F76FC1D8361A500003FF4;
+			productRefGroup = E80F77061D8361A500003FF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E80F77041D8361A500003FF4 /* GenZi */,
+				E80F771B1D8361A500003FF4 /* GenZiTests */,
+				E80F77261D8361A500003FF4 /* GenZiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E80F77031D8361A500003FF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E80F77161D8361A500003FF4 /* LaunchScreen.storyboard in Resources */,
+				E80F77131D8361A500003FF4 /* Assets.xcassets in Resources */,
+				E80965C31D84CB1E00E323C4 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E80F771A1D8361A500003FF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E80F77251D8361A500003FF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E80F77011D8361A500003FF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E80965CA1D84CBFF00E323C4 /* InstructionCollectionViewCell.swift in Sources */,
+				E80965D11D84CD4900E323C4 /* Game.swift in Sources */,
+				E80965C21D84CB1E00E323C4 /* Extensions.swift in Sources */,
+				E80F77111D8361A500003FF4 /* GenZi.xcdatamodeld in Sources */,
+				E80965CD1D84CC5200E323C4 /* GameLibraryViewController.swift in Sources */,
+				E80965CF1D84CC7600E323C4 /* GameLibraryCollectionViewCell.swift in Sources */,
+				E80965CB1D84CBFF00E323C4 /* InstructionViewController.swift in Sources */,
+				E80965C91D84CBFF00E323C4 /* Instruction.swift in Sources */,
+				E80965C11D84CB1E00E323C4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E80F77181D8361A500003FF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E80F77211D8361A500003FF4 /* GenZiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E80F77231D8361A500003FF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E80F772C1D8361A500003FF4 /* GenZiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E80F771E1D8361A500003FF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E80F77041D8361A500003FF4 /* GenZi */;
+			targetProxy = E80F771D1D8361A500003FF4 /* PBXContainerItemProxy */;
+		};
+		E80F77291D8361A500003FF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E80F77041D8361A500003FF4 /* GenZi */;
+			targetProxy = E80F77281D8361A500003FF4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E80F77141D8361A500003FF4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E80F77151D8361A500003FF4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E80F772E1D8361A500003FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E80F772F1D8361A500003FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E80F77311D8361A500003FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "GenZi/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adarbutel.GenZi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E80F77321D8361A500003FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "GenZi/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adarbutel.GenZi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E80F77341D8361A500003FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GenZiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adarbutel.GenZiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GenZi.app/GenZi";
+			};
+			name = Debug;
+		};
+		E80F77351D8361A500003FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GenZiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adarbutel.GenZiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GenZi.app/GenZi";
+			};
+			name = Release;
+		};
+		E80F77371D8361A500003FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GenZiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adarbutel.GenZiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GenZi;
+			};
+			name = Debug;
+		};
+		E80F77381D8361A500003FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GenZiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adarbutel.GenZiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GenZi;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E80F77001D8361A500003FF4 /* Build configuration list for PBXProject "GenZi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E80F772E1D8361A500003FF4 /* Debug */,
+				E80F772F1D8361A500003FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E80F77301D8361A500003FF4 /* Build configuration list for PBXNativeTarget "GenZi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E80F77311D8361A500003FF4 /* Debug */,
+				E80F77321D8361A500003FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E80F77331D8361A500003FF4 /* Build configuration list for PBXNativeTarget "GenZiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E80F77341D8361A500003FF4 /* Debug */,
+				E80F77351D8361A500003FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E80F77361D8361A500003FF4 /* Build configuration list for PBXNativeTarget "GenZiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E80F77371D8361A500003FF4 /* Debug */,
+				E80F77381D8361A500003FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E80F770F1D8361A500003FF4 /* GenZi.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E80F77101D8361A500003FF4 /* GenZi.xcdatamodel */,
+			);
+			currentVersion = E80F77101D8361A500003FF4 /* GenZi.xcdatamodel */;
+			path = GenZi.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E80F76FD1D8361A500003FF4 /* Project object */;
+}
