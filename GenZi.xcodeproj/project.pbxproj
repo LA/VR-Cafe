@@ -16,11 +16,13 @@
 		E80965CD1D84CC5200E323C4 /* GameLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80965CC1D84CC5200E323C4 /* GameLibraryViewController.swift */; };
 		E80965CF1D84CC7600E323C4 /* GameLibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80965CE1D84CC7600E323C4 /* GameLibraryCollectionViewCell.swift */; };
 		E80965D11D84CD4900E323C4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80965D01D84CD4900E323C4 /* Game.swift */; };
+		E80965D31D84D77E00E323C4 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80965D21D84D77E00E323C4 /* GameDetailViewController.swift */; };
 		E80F77111D8361A500003FF4 /* GenZi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E80F770F1D8361A500003FF4 /* GenZi.xcdatamodeld */; };
 		E80F77131D8361A500003FF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E80F77121D8361A500003FF4 /* Assets.xcassets */; };
 		E80F77161D8361A500003FF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E80F77141D8361A500003FF4 /* LaunchScreen.storyboard */; };
 		E80F77211D8361A500003FF4 /* GenZiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F77201D8361A500003FF4 /* GenZiTests.swift */; };
 		E80F772C1D8361A500003FF4 /* GenZiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F772B1D8361A500003FF4 /* GenZiUITests.swift */; };
+		E8F146E11D85C4D0000177AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F146E01D85C4D0000177AE /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,7 @@
 		E80965CC1D84CC5200E323C4 /* GameLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLibraryViewController.swift; sourceTree = "<group>"; };
 		E80965CE1D84CC7600E323C4 /* GameLibraryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLibraryCollectionViewCell.swift; sourceTree = "<group>"; };
 		E80965D01D84CD4900E323C4 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E80965D21D84D77E00E323C4 /* GameDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		E80F77051D8361A500003FF4 /* GenZi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GenZi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80F77101D8361A500003FF4 /* GenZi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GenZi.xcdatamodel; sourceTree = "<group>"; };
 		E80F77121D8361A500003FF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		E80F77271D8361A500003FF4 /* GenZiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GenZiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80F772B1D8361A500003FF4 /* GenZiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenZiUITests.swift; sourceTree = "<group>"; };
 		E80F772D1D8361A500003FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8F146E01D85C4D0000177AE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +104,10 @@
 		E80965C41D84CBFF00E323C4 /* Game Library */ = {
 			isa = PBXGroup;
 			children = (
-				E80965CC1D84CC5200E323C4 /* GameLibraryViewController.swift */,
 				E80965D01D84CD4900E323C4 /* Game.swift */,
 				E80965CE1D84CC7600E323C4 /* GameLibraryCollectionViewCell.swift */,
+				E80965CC1D84CC5200E323C4 /* GameLibraryViewController.swift */,
+				E80965D21D84D77E00E323C4 /* GameDetailViewController.swift */,
 			);
 			path = "Game Library";
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 		E80F77071D8361A500003FF4 /* GenZi */ = {
 			isa = PBXGroup;
 			children = (
+				E8F146DF1D85C4C2000177AE /* Home */,
 				E80965C41D84CBFF00E323C4 /* Game Library */,
 				E80965C51D84CBFF00E323C4 /* How To */,
 				E80965BA1D84CB1E00E323C4 /* Supporting Files */,
@@ -166,6 +172,14 @@
 				E80F772D1D8361A500003FF4 /* Info.plist */,
 			);
 			path = GenZiUITests;
+			sourceTree = "<group>";
+		};
+		E8F146DF1D85C4C2000177AE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E8F146E01D85C4D0000177AE /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,11 +314,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E80965CA1D84CBFF00E323C4 /* InstructionCollectionViewCell.swift in Sources */,
+				E80965D31D84D77E00E323C4 /* GameDetailViewController.swift in Sources */,
 				E80965D11D84CD4900E323C4 /* Game.swift in Sources */,
 				E80965C21D84CB1E00E323C4 /* Extensions.swift in Sources */,
 				E80F77111D8361A500003FF4 /* GenZi.xcdatamodeld in Sources */,
 				E80965CD1D84CC5200E323C4 /* GameLibraryViewController.swift in Sources */,
 				E80965CF1D84CC7600E323C4 /* GameLibraryCollectionViewCell.swift in Sources */,
+				E8F146E11D85C4D0000177AE /* HomeViewController.swift in Sources */,
 				E80965CB1D84CBFF00E323C4 /* InstructionViewController.swift in Sources */,
 				E80965C91D84CBFF00E323C4 /* Instruction.swift in Sources */,
 				E80965C11D84CB1E00E323C4 /* AppDelegate.swift in Sources */,

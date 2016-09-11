@@ -20,14 +20,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.makeKeyAndVisible()
         
-        // Create the initial view controller and embed it into a navigation controller
-        let instructionVc = InstructionViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        let navController = UINavigationController(rootViewController: instructionVc)
+        // Create the initial view controller and embed it into a navigation controller, then add children
+        let homeVc = HomeViewController()
+        // let gameVc = GameLibraryViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        // let instructionVc = InstructionViewController(collectionViewLayout: UICollectionViewLayout())
+        
+        let navController = UINavigationController(rootViewController: homeVc)
+        // navController.addChildViewController(gameVc)
+        // navController.addChildViewController(instructionVc)
+
         window?.rootViewController = navController
         
         // Change navigation bar to black, and navigation bar text to purple and font to bold size 23
         UINavigationBar.appearance().barTintColor = UIColor.blackColor()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 102/255, green: 96/255, blue: 176/255, alpha: 1.0), NSFontAttributeName: UIFont.systemFontOfSize(25)]
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: purpleColor, NSFontAttributeName: UIFont.systemFontOfSize(25)]
         
         application.statusBarStyle = .LightContent
         

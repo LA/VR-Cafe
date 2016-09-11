@@ -38,3 +38,5 @@ extension Int {
         return Int(arc4random_uniform(UInt32(b - a + 1))) + a
     }
 }
+
+let purpleColor = UIColor(red: 102/255, green: 96/255, blue: 176/255, alpha: 1.0)

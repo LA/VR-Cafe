@@ -8,15 +8,13 @@
 
 import UIKit
 
-let instructionTitles = [String]()
-
-let boldFontSize = 18 as CGFloat
-let thinFontSize = 14 as CGFloat
+private let boldFontSize = 18 as CGFloat
+private let thinFontSize = 14 as CGFloat
 
 class InstructionCollectionViewCell: UICollectionViewCell, UITextViewDelegate {
     
     // Possible Cell Border Colors to Select From
-    let borderColors = [UIColor(red: 102/255, green: 96/255, blue: 176/255, alpha: 1.0)]
+    private let borderColors = [UIColor(red: 102/255, green: 96/255, blue: 176/255, alpha: 1.0)]
     
     override init(frame: CGRect) {
         super.init(frame: frame)

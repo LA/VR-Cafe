@@ -13,16 +13,16 @@ private let reuseIdentifier = "Instruction"
 class InstructionViewController: UICollectionViewController {
     
     // Instructions
-    let instructions = Instruction.getViveInstructions()
+    private let instructions = Instruction.getViveInstructions()
     
     // Cell Size
-    var cellWidth: CGFloat = 0
+    private var cellWidth: CGFloat = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set View Controller Title To GenZi
-        title = "GenZi"
+        // Set View Controller Title
+        title = "How-To"
         
         // Set background color to black
         collectionView?.backgroundColor = UIColor.blackColor()
@@ -37,7 +37,7 @@ class InstructionViewController: UICollectionViewController {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
-        // Set Cell Size According to Edge Insets
+        // Set Cell Width According to Edge Insets
         cellWidth = (view.frame.width) - (layout.sectionInset.left + layout.sectionInset.right)
 
         // Add Layout to Collection View
