@@ -21,6 +21,8 @@ class GameLibraryViewController: UICollectionViewController, UICollectionViewDel
     // Timer for segue fade.
     private var timer = NSTimer()
     private let timerDelay = 0.0125
+    // Rate of change in the alpha during fade.
+    private let alphaRate = 0.05 as CGFloat
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +54,6 @@ class GameLibraryViewController: UICollectionViewController, UICollectionViewDel
     }
     
     override func viewWillAppear(animated: Bool) {
-        // Set Collection Transparency to None
-        
         // Turn off Timer to avoid bugs.
         timer.invalidate()
         
@@ -62,20 +62,20 @@ class GameLibraryViewController: UICollectionViewController, UICollectionViewDel
     }
     
     // MARK: Custom Methods
-    // Used when segueing into a detail
-    func lowerAlpha() {
-        if collectionView!.alpha <= 0 {
-            timer.invalidate()
-        } else {
-            collectionView?.alpha -= 0.1
-        }
-    }
-    
+    // Used to create the fade when segueing into a detail
     func increaseAlpha() {
         if collectionView!.alpha >= 1 {
             timer.invalidate()
         } else {
-            collectionView?.alpha += 0.1
+            collectionView?.alpha += alphaRate
+        }
+    }
+    
+    func lowerAlpha() {
+        if collectionView!.alpha <= 0 {
+            timer.invalidate()
+        } else {
+            collectionView?.alpha -= alphaRate * 4
         }
     }
 
