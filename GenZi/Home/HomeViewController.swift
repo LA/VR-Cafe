@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let buttonFontSize = 35 as CGFloat
+let buttonFontSize = 35 as CGFloat
 
 class HomeViewController: UIViewController {
 
@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
         
         gameButton.addTarget(self, action: #selector(gamesTapped), forControlEvents: .TouchUpInside)
         howToButton.addTarget(self, action: #selector(howToTapped), forControlEvents: .TouchUpInside)
+        
         
         setupViews()
         // Do any additional setup after loading the view.
@@ -44,7 +45,7 @@ class HomeViewController: UIViewController {
     let howToButton: UIButton = {
         let button = UIButton(frame: CGRectMake(0, 0, 100, 50))
         button.backgroundColor = purpleColor
-        button.setTitle("HowTo", forState: .Normal)
+        button.setTitle("How-To", forState: .Normal)
         button.titleLabel?.font = UIFont.systemFontOfSize(buttonFontSize)
         return button
     }()

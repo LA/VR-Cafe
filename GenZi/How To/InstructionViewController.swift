@@ -44,8 +44,7 @@ class InstructionViewController: UICollectionViewController {
         collectionView?.collectionViewLayout = layout
         
         // Hide Nav Bar While Scrolling
-        navigationController?.hidesBarsOnSwipe = true
-        
+        navigationController?.hidesBarsOnSwipe = false
     }
     
     // Number of Items in CollectionView

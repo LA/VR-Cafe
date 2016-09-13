@@ -8,8 +8,8 @@
 
 import UIKit
 
-private let boldFontSize = 18 as CGFloat
-private let thinFontSize = 14 as CGFloat
+let boldFontSize = 18 as CGFloat
+let thinFontSize = 14 as CGFloat
 
 class InstructionCollectionViewCell: UICollectionViewCell, UITextViewDelegate {
     

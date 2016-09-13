@@ -18,6 +18,10 @@ class GameLibraryViewController: UICollectionViewController, UICollectionViewDel
     private let cellSpacing = 1 as CGFloat
     private var cellSize = CGSize()
     
+    // Timer for segue fade.
+    private var timer = NSTimer()
+    private let timerDelay = 0.0125
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,11 +44,39 @@ class GameLibraryViewController: UICollectionViewController, UICollectionViewDel
         self.collectionView!.registerClass(GameLibraryCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         // Hide Nav Bar While Scrolling
-        navigationController?.hidesBarsOnSwipe = true
+        navigationController?.hidesBarsOnSwipe = false
         
         // Add Back Bar Button
         //let backButton = UIBarButtonItem(title: "<", style: .Plain, target: self, action: nil)
         //navigationItem.leftBarButtonItem = backButton
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        // Set Collection Transparency to None
+        
+        // Turn off Timer to avoid bugs.
+        timer.invalidate()
+        
+        // Set Timer to Increase Alpha over Time
+        timer = NSTimer.scheduledTimerWithTimeInterval(timerDelay, target: self, selector: #selector(increaseAlpha), userInfo: nil, repeats: true)
+    }
+    
+    // MARK: Custom Methods
+    // Used when segueing into a detail
+    func lowerAlpha() {
+        if collectionView!.alpha <= 0 {
+            timer.invalidate()
+        } else {
+            collectionView?.alpha -= 0.1
+        }
+    }
+    
+    func increaseAlpha() {
+        if collectionView!.alpha >= 1 {
+            timer.invalidate()
+        } else {
+            collectionView?.alpha += 0.1
+        }
     }
 
     // MARK: UICollectionViewDataSource
@@ -65,6 +97,23 @@ class GameLibraryViewController: UICollectionViewController, UICollectionViewDel
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return cellSize
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        // Create Detail View Controller to Open
+        let detailVc = GameDetailViewController()
+        
+        // Set Detail VC Game to Game it Clicked
+        //detailVc.game = games[indexPath.row]
+        
+        // Turn off Timer to avoid bugs.
+        timer.invalidate()
+        
+        // Set Timer to Lower Alpha over Time
+        timer = NSTimer.scheduledTimerWithTimeInterval(timerDelay, target: self, selector: #selector(lowerAlpha), userInfo: nil, repeats: true)
+        
+        // Push Detail View Controller on to Stack
+        navigationController?.pushViewController(detailVc, animated: true)
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
