@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Instruction"
 
-class InstructionViewController: UICollectionViewController {
+class InstructionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     // Instructions
     private let instructions = Instruction.getViveInstructions()
@@ -25,13 +25,13 @@ class InstructionViewController: UICollectionViewController {
         title = "How-To"
         
         // Set background color to black
-        collectionView?.backgroundColor = UIColor.blackColor()
+        collectionView?.backgroundColor = UIColor.black
         
         // When you drag, the collection view bounces
         collectionView?.alwaysBounceVertical = true
         
         // Register Cell Class
-        collectionView?.registerClass(InstructionCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView?.register(InstructionCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         // Create Cell Spacing Layout
         let layout = UICollectionViewFlowLayout()
@@ -48,15 +48,14 @@ class InstructionViewController: UICollectionViewController {
     }
     
     // Number of Items in CollectionView
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return instructions.count
     }
     
     // The Cells in the Collection View
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Create Instruction Cell and Set All Neccessary Properties
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! InstructionCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! InstructionCollectionViewCell
         
         // Set properties
         cell.titleLabel.text = instructions[indexPath.row].title
@@ -67,8 +66,8 @@ class InstructionViewController: UICollectionViewController {
     }
     
     // Size of each collection view item
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(cellWidth, 200)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: cellWidth, height: 200)
     }
 }
 

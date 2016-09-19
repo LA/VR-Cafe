@@ -9,17 +9,19 @@
 import UIKit
 
 private let reuseIdentifier = "Game"
+private let headerIdentifier = "HeaderCell"
 
 class GameLibraryViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     private let games = Game.getGameLibrary()
     private let gamesPerRow = 3 as CGFloat
+    private let genres = Genre.getGenres()
 
     private let cellSpacing = 1 as CGFloat
     private var cellSize = CGSize()
     
     // Timer for segue fade.
-    private var timer = NSTimer()
+    private var timer = Timer()
     private let timerDelay = 0.0125
     // Rate of change in the alpha during fade.
     private let alphaRate = 0.05 as CGFloat
@@ -31,7 +33,7 @@ class GameLibraryViewController: UICollectionViewController, UICollectionViewDel
         title = "Game Library"
         
         // Set background color to black
-        collectionView?.backgroundColor = UIColor.blackColor()
+        collectionView?.backgroundColor = UIColor.black
         
         // When you drag, the collection view bounces
         collectionView?.alwaysBounceVertical = true
@@ -40,10 +42,13 @@ class GameLibraryViewController: UICollectionViewController, UICollectionViewDel
         // let cellHeight = ((collectionView!.frame.height) / gamesPerRow) - (layout.sectionInset.top + layout.sectionInset.bottom)
         let cellWidth = ((collectionView!.frame.width) / gamesPerRow) - cellSpacing
         let cellHeight = cellWidth
-        cellSize = CGSizeMake(cellWidth, cellHeight)
+        cellSize = CGSize(width: cellWidth, height: cellHeight)
 
         // Register Cell Class
-        self.collectionView!.registerClass(GameLibraryCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView!.register(GameLibraryCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        // Register Header Cell
+        collectionView!.register(GenreHeaderCollectionViewCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerIdentifier);
         
         // Hide Nav Bar While Scrolling
         navigationController?.hidesBarsOnSwipe = false
@@ -53,12 +58,12 @@ class GameLibraryViewController: UICollectionViewController, UICollectionViewDel
         //navigationItem.leftBarButtonItem = backButton
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         // Turn off Timer to avoid bugs.
         timer.invalidate()
         
         // Set Timer to Increase Alpha over Time
-        timer = NSTimer.scheduledTimerWithTimeInterval(timerDelay, target: self, selector: #selector(increaseAlpha), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: timerDelay, target: self, selector: #selector(increaseAlpha), userInfo: nil, repeats: true)
     }
     
     // MARK: Custom Methods
@@ -75,31 +80,35 @@ class GameLibraryViewController: UICollectionViewController, UICollectionViewDel
         if collectionView!.alpha <= 0 {
             timer.invalidate()
         } else {
+            // Speed Alpha Rate * 4
             collectionView?.alpha -= alphaRate * 4
         }
     }
 
     // MARK: UICollectionViewDataSource
-
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // return games.count
-        return 45
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return genres.count
+        // return 1
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // return games.count
+        // return games.count / genres.count
+        return 12
+    }
     
-        // Set properties
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         
-    
         return cell
     }
 
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return cellSize
     }
     
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Create Detail View Controller to Open
         let detailVc = GameDetailViewController()
         
@@ -110,19 +119,36 @@ class GameLibraryViewController: UICollectionViewController, UICollectionViewDel
         timer.invalidate()
         
         // Set Timer to Lower Alpha over Time
-        timer = NSTimer.scheduledTimerWithTimeInterval(timerDelay, target: self, selector: #selector(lowerAlpha), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: timerDelay, target: self, selector: #selector(lowerAlpha), userInfo: nil, repeats: true)
         
         // Push Detail View Controller on to Stack
         navigationController?.pushViewController(detailVc, animated: true)
     }
     
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> GenreHeaderCollectionViewCell {
+        
+        if kind == UICollectionElementKindSectionHeader {
+            let headerCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! GenreHeaderCollectionViewCell
+            
+            headerCell.genreLabel.text = genres[indexPath.section].rawValue
+            
+            return headerCell
+        }
+        
+        return UICollectionReusableView() as! GenreHeaderCollectionViewCell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: self.view.frame.size.width, height: 40)
+    }
+    
     // MARK: UICollectionViewDelegateFlowLayout
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return cellSpacing
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return cellSpacing
     }
 }

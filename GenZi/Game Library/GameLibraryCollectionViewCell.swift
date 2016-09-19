@@ -23,8 +23,8 @@ class GameLibraryCollectionViewCell: UICollectionViewCell {
     // Game Logo Image View
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .ScaleAspectFit
-        imageView.backgroundColor = UIColor.redColor()
+        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = UIColor.red
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

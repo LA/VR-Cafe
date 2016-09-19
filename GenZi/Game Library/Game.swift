@@ -14,11 +14,13 @@ struct Game {
     var title: String
     var description: String
     var image: UIImage
+    var genre: Genre
     
-    init(title: String, description: String, image: UIImage) {
+    init(title: String, description: String, image: UIImage, genre: Genre) {
         self.title = title
         self.description = description
         self.image = image
+        self.genre = genre
     }
     
     static func getGameLibrary() -> [Game] {

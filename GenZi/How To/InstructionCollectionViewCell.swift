@@ -32,10 +32,10 @@ class InstructionCollectionViewCell: UICollectionViewCell, UITextViewDelegate {
         // Unlimited Amount of Lines
         label.numberOfLines = 0
         // Set to system bold font size
-        label.font = UIFont.boldSystemFontOfSize(boldFontSize)
-        label.textColor = UIColor.whiteColor()
+        label.font = UIFont.boldSystemFont(ofSize: boldFontSize)
+        label.textColor = UIColor.white
         // Wrap at the end of lines
-        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -44,12 +44,12 @@ class InstructionCollectionViewCell: UICollectionViewCell, UITextViewDelegate {
     let descriptionTextView: UITextView = {
         let textView = UITextView()
         // Set to system thin font size
-        textView.font = UIFont.systemFontOfSize(thinFontSize)
-        textView.backgroundColor = UIColor.clearColor()
-        textView.textColor = UIColor.whiteColor()
+        textView.font = UIFont.systemFont(ofSize: thinFontSize)
+        textView.backgroundColor = UIColor.clear
+        textView.textColor = UIColor.white
         // Remove ability to select and edit the text view
-        textView.editable = false
-        textView.selectable = false
+        textView.isEditable = false
+        textView.isSelectable = false
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
@@ -57,18 +57,18 @@ class InstructionCollectionViewCell: UICollectionViewCell, UITextViewDelegate {
     // Example Image View
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .ScaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         //imageView.backgroundColor = UIColor.redColor()
-        imageView.layer.cornerRadius = 10
+        imageView.layer.cornerRadius = cornerRadius
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     func setupViews() {
-        backgroundColor = UIColor.blackColor()
+        backgroundColor = UIColor.black
         // Set Layer Properties
         layer.borderWidth = 2
-        layer.borderColor = borderColors[Int.randomIntFrom(0, to: borderColors.count - 1)].CGColor
+        layer.borderColor = borderColors[Int.randomIntFrom(start: 0, to: borderColors.count - 1)].cgColor
         layer.cornerRadius = 10
         
         addSubview(titleLabel)

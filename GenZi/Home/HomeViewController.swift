@@ -8,8 +8,6 @@
 
 import UIKit
 
-let buttonFontSize = 35 as CGFloat
-
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -19,9 +17,8 @@ class HomeViewController: UIViewController {
         
         navigationController?.hidesBarsOnSwipe = true
         
-        gameButton.addTarget(self, action: #selector(gamesTapped), forControlEvents: .TouchUpInside)
-        howToButton.addTarget(self, action: #selector(howToTapped), forControlEvents: .TouchUpInside)
-        
+        gameButton.addTarget(self, action: #selector(gamesTapped), for: .touchUpInside)
+        howToButton.addTarget(self, action: #selector(howToTapped), for: .touchUpInside)
         
         setupViews()
         // Do any additional setup after loading the view.
@@ -43,35 +40,33 @@ class HomeViewController: UIViewController {
     }
     
     let howToButton: UIButton = {
-        let button = UIButton(frame: CGRectMake(0, 0, 100, 50))
-        button.backgroundColor = purpleColor
-        button.setTitle("How-To", forState: .Normal)
-        button.titleLabel?.font = UIFont.systemFontOfSize(buttonFontSize)
-        return button
+        let button = UIButton(frame: UIButton.homeButtonRect)
+        button.setTitle("How-To", for: .normal)
+        return button.layedOut()
     }()
     
     let gameButton: UIButton = {
-        let button = UIButton(frame: CGRectMake(0, 0, 100, 50))
-        button.backgroundColor = purpleColor
-        button.setTitle("Games", forState: .Normal)
-        button.titleLabel?.font = UIFont.systemFontOfSize(buttonFontSize)
-        return button
+        let button = UIButton(frame: UIButton.homeButtonRect)
+        button.setTitle("Games", for: .normal)
+        return button.layedOut()
     }()
     
     func setupViews() {
-        view.backgroundColor = UIColor.blackColor()
+        view.backgroundColor = UIColor.black
         
         view.addSubview(howToButton)
         view.addSubview(gameButton)
-
-        view.addConstraints(withFormat: "H:|-80-[v0]-80-|", views: howToButton)
-        view.addConstraints(withFormat: "H:|-80-[v0]-80-|", views: gameButton)
-        // view.addConstraints(withFormat: "V:|-150-[v0]-50-[v1]-150-|", views: howToButton, gameButton)
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-100-[v0]-50-[v1]-250-|", options: [.AlignAllCenterX], metrics: nil, views: ["v0": howToButton, "v1": gameButton]))
         
-        view.addConstraint(NSLayoutConstraint(item: howToButton, attribute: .Height, relatedBy: .Equal, toItem: gameButton, attribute: .Height, multiplier: 1.0, constant: 0.0))
+        view.addConstraints(withFormat: "V:|-100-[v0]-25-[v1]-250-|", views: howToButton, gameButton)
+        
+        view.addConstraints(withFormat: "H:|-15-[v0]-15-|", views: howToButton)
+        view.addConstraints(withFormat: "H:|-15-[v0]-15-|", views: gameButton)
+        
+        view.addConstraint(NSLayoutConstraint(item: gameButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))
+        view.addConstraint(NSLayoutConstraint(item: howToButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))
+        
+        view.addConstraint(NSLayoutConstraint(item: gameButton, attribute: .height, relatedBy: .equal, toItem: howToButton, attribute: .height, multiplier: 1.0, constant: 0.0))
     }
-    
 
     /*
     // MARK: - Navigation

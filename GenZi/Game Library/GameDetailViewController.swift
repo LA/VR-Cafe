@@ -32,10 +32,10 @@ class GameDetailViewController: UIViewController {
         // Unlimited Amount of Lines
         label.numberOfLines = 0
         // Set to system bold font size
-        label.font = UIFont.boldSystemFontOfSize(boldFontSize)
-        label.textColor = UIColor.whiteColor()
+        label.font = UIFont.boldSystemFont(ofSize: boldFontSize)
+        label.textColor = UIColor.white
         // Wrap at the end of lines
-        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -44,12 +44,12 @@ class GameDetailViewController: UIViewController {
     let descriptionTextView: UITextView = {
         let textView = UITextView()
         // Set to system thin font size
-        textView.font = UIFont.systemFontOfSize(thinFontSize)
-        textView.backgroundColor = UIColor.clearColor()
-        textView.textColor = UIColor.whiteColor()
+        textView.font = UIFont.systemFont(ofSize: thinFontSize)
+        textView.backgroundColor = UIColor.clear
+        textView.textColor = UIColor.white
         // Remove ability to select and edit the text view
-        textView.editable = false
-        textView.selectable = false
+        textView.isEditable = false
+        textView.isSelectable = false
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
@@ -57,8 +57,8 @@ class GameDetailViewController: UIViewController {
     // Example Image View
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .ScaleAspectFit
-        imageView.backgroundColor = UIColor.redColor()
+        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = UIColor.red
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -72,13 +72,13 @@ class GameDetailViewController: UIViewController {
         // Layout Constraints with Visual Format
         
         // Set ImageView Size to Frame Height / 3
-        view.addConstraint(NSLayoutConstraint(item: imageView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: view.frame.size.height / 3))
+        view.addConstraint(NSLayoutConstraint(item: imageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: view.frame.size.height / 3))
         
         // Center the label in the view
-        titleLabel.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor).active = true
+        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         // Center Description in the view
-        descriptionTextView.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor).active = true
+        descriptionTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         // Set Title Horizontal Constraints
         // view.addConstraints(withFormat: "H:|-45-[v0]-45-|", views: titleLabel)
